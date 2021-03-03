@@ -30,6 +30,9 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Set label
+        getSupportActionBar().setTitle("Selection Activity");
+
         spinner = findViewById(R.id.spinner);
         imageView = findViewById(R.id.imageView);
 
@@ -69,8 +72,7 @@ public class SelectionActivity extends AppCompatActivity {
                 Toast.makeText(SelectionActivity.this, "Item Unselected", Toast.LENGTH_SHORT).show();
             }
         });
-        //Set label
-        //getActionBar().setTitle("@string/selection_activity");
+
     }
 
     private void showPicture (int position) {
