@@ -72,12 +72,15 @@ public class SelectionActivity extends AppCompatActivity {
                     imageView.setImageResource(android.R.color.transparent);
                 }
                 else {
-                    Toast.makeText(SelectionActivity.this, "Item Selected", Toast.LENGTH_SHORT).show();
-                    showPicture(position);
+                    //Toast.makeText(SelectionActivity.this, "Item Selected", Toast.LENGTH_SHORT).show();
+                    //showPicture(position);
 
 
-                    //Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
-                    //startActivity(launchIntent);
+
+                    Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
+                    launchIntent.putExtra("name", spinner.getSelectedItem().toString());
+                    launchIntent.putExtra("image", carImagesArray[position]);
+                    startActivity(launchIntent);
                 }
             }
 
