@@ -29,8 +29,6 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-        //Set label
-        getSupportActionBar().setTitle("Display Activity");
 
         imageView = findViewById(R.id.imageView);
         carImagesArray = new int[]{R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
