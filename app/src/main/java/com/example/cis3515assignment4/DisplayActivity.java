@@ -24,7 +24,6 @@ public class DisplayActivity extends AppCompatActivity {
 
     ImageView imageView;
     TextView textView;
-    //int[] carImagesArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +35,10 @@ public class DisplayActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             int res_image = bundle.getInt("image");
-           //string res_text = bundle.getInt("name");
             imageView.setImageResource(res_image);
             textView.setText(getIntent().getExtras().getString("name"));
         }
 
-
-
-
-
-        //carImagesArray = new int[]{R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
-
-        //Intent intent = getIntent();
-        //int resid = intent.getIntExtra("resid");
-
     }
 
-//    private void showPicture (int position) {
-//        imageView.setImageResource(carImagesArray[position]);
-//    }
 }

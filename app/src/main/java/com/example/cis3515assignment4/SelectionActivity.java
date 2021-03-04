@@ -62,7 +62,6 @@ public class SelectionActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, carMakeArray);
 
         spinner.setAdapter(adapter);
-        //DisplayActivity adapter = new DisplayActivity(this, desertsArray, locationArray);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -72,11 +71,6 @@ public class SelectionActivity extends AppCompatActivity {
                     imageView.setImageResource(android.R.color.transparent);
                 }
                 else {
-                    //Toast.makeText(SelectionActivity.this, "Item Selected", Toast.LENGTH_SHORT).show();
-                    //showPicture(position);
-
-
-
                     Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
                     launchIntent.putExtra("name", spinner.getSelectedItem().toString());
                     launchIntent.putExtra("image", carImagesArray[position]);
@@ -90,6 +84,14 @@ public class SelectionActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        spinner.setSelection(0);
     }
 
     private void showPicture (int position) {
