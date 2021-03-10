@@ -32,13 +32,13 @@ public class DisplayActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView2);
         textView = findViewById(R.id.textView);
-        Bundle bundle = getIntent().getExtras();
-        if(bundle!=null){
-            int res_image = bundle.getInt("image");
-            imageView.setImageResource(res_image);
-            textView.setText(getIntent().getExtras().getString("name"));
+        Intent i = getIntent();
+        int position = i.getExtras().getInt("id");
+        ImageAdapter imageAdapter = new ImageAdapter(this);
+
+        imageView.setImageResource(imageAdapter.carImagesArray[position]);
+
         }
 
     }
 
-}

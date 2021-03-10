@@ -27,8 +27,6 @@ import java.util.Collections;
 public class SelectionActivity extends AppCompatActivity {
 
     ImageView imageView;
-//    Spinner spinner;
-    //int[] carImagesArray;
     GridView gridView;
 
     @Override
@@ -37,31 +35,10 @@ public class SelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Set label
-        getSupportActionBar().setTitle("Selection Activity");
+        getSupportActionBar().setTitle("Image Select");
 
-        //spinner = findViewById(R.id.spinner);
         imageView = findViewById(R.id.imageView);
 
-//        ArrayList carMakeArray = new ArrayList<String>();
-//        carMakeArray.add(0, "Select item from list");
-//        carMakeArray.add("Chevy");
-//        carMakeArray.add("Dodge");
-//        carMakeArray.add("Lamborghini");
-//        carMakeArray.add("Ford");
-//        carMakeArray.add("Ferrari");
-//
-//
-//        ArrayList carModelArray = new ArrayList<String>();
-//        carModelArray.add(0,"");
-//        carModelArray.add("Camaro");
-//        carModelArray.add("Charger");
-//        carModelArray.add("Gallardo");
-//        carModelArray.add("Mustang");
-//        carModelArray.add("Spider488");
-
-        //carImagesArray = new int[]{android.R.color.transparent, R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
-
-       // ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, carMakeArray);
 
         gridView = (GridView)findViewById(R.id.gridView);
         gridView.setAdapter(new ImageAdapter(this));
@@ -72,46 +49,11 @@ public class SelectionActivity extends AppCompatActivity {
 
                     Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
                     launchIntent.putExtra("id", position);
-                    //launchIntent.putExtra("image", gridView.getSelectedItem().);
                     startActivity(launchIntent);
 
-        }
-
-//        spinner.setAdapter(adapter);
-//
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                if(parent.getItemAtPosition(position).equals("Select item from list")){
-//                    imageView.setImageResource(android.R.color.transparent);
-//                }
-//                else {
-//                    Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
-//                    launchIntent.putExtra("name", spinner.getSelectedItem().toString());
-//                    launchIntent.putExtra("image", carImagesArray[position]);
-//                    startActivity(launchIntent);
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                Toast.makeText(SelectionActivity.this, "Item Unselected", Toast.LENGTH_SHORT).show();
-//            }
+            }
         });
 
-
-
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        //spinner.setSelection(0);
-//    }
-//
-//    private void showPicture (int position) {
-//        imageView.setImageResource(carImagesArray[position]);
-//    }
 }
 

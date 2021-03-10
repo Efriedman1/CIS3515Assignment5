@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class ImageAdapter extends BaseAdapter {
 
-    private Context context;
+    private final Context context;
     public int[] carImagesArray = {R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
 
     public ImageAdapter(Context context) {

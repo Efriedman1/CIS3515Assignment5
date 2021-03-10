@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CIS3515Assignment4">
         <activity android:name=".DisplayActivity"
-            android:label="Display Activity">
+            android:label="Display">
         </activity>
         <activity android:name=".SelectionActivity">
             <intent-filter>
