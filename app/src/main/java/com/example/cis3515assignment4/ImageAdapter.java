@@ -10,16 +10,15 @@ import android.widget.ImageView;
 public class ImageAdapter extends BaseAdapter {
 
     private Context context;
-    public int[] carImagesArray = {android.R.color.transparent, R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
+    public int[] carImagesArray = {R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
 
     public ImageAdapter(Context context) {
         this.context = context;
     }
-    //carImagesArray = new int[]{android.R.color.transparent, R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
 
     @Override
     public int getCount() {
-        return 0;
+        return carImagesArray.length;
     }
 
     @Override
