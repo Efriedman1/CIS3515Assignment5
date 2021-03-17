@@ -1,42 +1,77 @@
 package com.example.cis3515assignment4;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ImageAdapter extends BaseAdapter {
 
-    private final Context context;
-    public int[] carImagesArray = {R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
+    Context context;
+    ArrayList<String> items;
+    int[] imageRes;
+    String instruction = "Select item from list"; // Instruction to show for as first item
 
-    public ImageAdapter(Context context) {
+    public ImageAdapter (Context context, ArrayList items, int[] imageRes) {
         this.context = context;
+        this.items = items;
+        this.imageRes = imageRes;
     }
 
     @Override
     public int getCount() {
-        return carImagesArray.length;
+        return items.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return carImagesArray[position];
+        return items.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(carImagesArray[position]);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(340, 350));
-        return imageView;
+
+        TextView textView;
+        ImageView imageView;
+
+        FrameLayout frameLayout;
+
+        if (convertView == null) {
+            frameLayout = new FrameLayout(context);
+            textView = new TextView(context);
+            imageView = new ImageView(context);
+            textView.setPadding(10,15,15,15);
+            textView.setTextSize(22);
+
+            frameLayout.addView(imageView);
+            imageView.getLayoutParams().height = 340;
+            imageView.getLayoutParams().width = 340;
+            frameLayout.addView(textView);
+            textView.setGravity(Gravity.CENTER);
+            textView.setHeight(340);
+            textView.setTextColor(Color.WHITE);
+        } else {
+            frameLayout = (FrameLayout) convertView;
+            imageView = (ImageView) frameLayout.getChildAt(0);
+            textView = (TextView) frameLayout.getChildAt(1);
+        }
+
+        imageView.setImageResource(imageRes[position]);
+        textView.setText(items.get(position));
+
+        return frameLayout;
     }
 }

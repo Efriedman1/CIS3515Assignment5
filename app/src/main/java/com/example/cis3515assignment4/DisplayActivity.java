@@ -30,15 +30,16 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-        imageView = findViewById(R.id.imageView2);
-        textView = findViewById(R.id.textView);
-        Intent i = getIntent();
-        int position = i.getExtras().getInt("id");
-        ImageAdapter imageAdapter = new ImageAdapter(this);
+        imageView = findViewById(R.id.imageView);
+        textView = findViewById(R.id.TextView);
 
-        imageView.setImageResource(imageAdapter.carImagesArray[position]);
+        Intent i = getIntent();
+
+        int position = i.getExtras().getInt("id");
+
+        textView.setText(i.getStringExtra(SelectionActivity.EXTRA_DESCRIPTION));
+        imageView.setImageResource(i.getIntExtra(SelectionActivity.EXTRA_IMAGE, R.drawable.ic_launcher_foreground));
 
         }
-
     }
 

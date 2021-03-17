@@ -26,8 +26,15 @@ import java.util.Collections;
 
 public class SelectionActivity extends AppCompatActivity {
 
-    ImageView imageView;
+
+    public static final String EXTRA_DESCRIPTION = "description";
+    public static final String EXTRA_IMAGE = "image";
+
+  //  ImageView imageView;
     GridView gridView;
+
+    int[] carImagesArray;
+    ArrayList<String> carsArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,23 +44,35 @@ public class SelectionActivity extends AppCompatActivity {
         //Set label
         getSupportActionBar().setTitle("Image Select");
 
-        imageView = findViewById(R.id.imageView);
+        gridView = findViewById(R.id.gridView);
+        gridView.setNumColumns(3);
 
+        carsArray = new ArrayList<String>();
+        carsArray.add("Atacama");
+        carsArray.add("Gobi");
+        carsArray.add("Mohave");
+        carsArray.add("Patagonian");
+        carsArray.add("Sahara");
 
-        gridView = (GridView)findViewById(R.id.gridView);
-        gridView.setAdapter(new ImageAdapter(this));
+        carImagesArray = new int[]{R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
+        ImageAdapter adapter = new ImageAdapter(this, carsArray, carImagesArray);
+        gridView.setAdapter(adapter);
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                    Intent launchIntent = new Intent(SelectionActivity.this, DisplayActivity.class);
-                    launchIntent.putExtra("id", position);
-                    startActivity(launchIntent);
-
+                showPicture(position);
             }
         });
+    }
 
+    private void showPicture (int position) {
+        Intent launchIntent = new Intent(this, DisplayActivity.class);
+        launchIntent.putExtra(EXTRA_DESCRIPTION, carsArray.get(position));
+        launchIntent.putExtra(EXTRA_IMAGE, carImagesArray[position]);
+        // Ensure that we are notified in onActivityResult() when DisplayActivity closes
+        startActivity(launchIntent);
     }
 }
 
