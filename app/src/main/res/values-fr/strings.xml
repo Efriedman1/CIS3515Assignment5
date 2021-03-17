@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Car Image View App</string>
+    <string name="instruction">Veuillez sélectionner un article</string>
+    <string name="display">Afficher</string>
+    <string name="textView">affichage</string>
+    <string name="description">la description</string>
+    <string name="image">Image</string>
+    <string name="actionBarTitle">Sélection d\'article</string>
+    <string name="carOne">Camaro</string>
+    <string name="carTwo">Chargeur</string>
+    <string name="carThree">Gallardo</string>
+    <string name="carFour">Mustang</string>
+    <string name="carFive">488 Araignée</string>
+</resources>

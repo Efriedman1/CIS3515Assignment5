@@ -2,6 +2,7 @@ package com.example.cis3515assignment4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -27,11 +28,13 @@ import java.util.Collections;
 public class SelectionActivity extends AppCompatActivity {
 
 
-    public static final String EXTRA_DESCRIPTION = "description";
-    public static final String EXTRA_IMAGE = "image";
+    public static final String EXTRA_DESCRIPTION = String.valueOf(R.string.description);
+    public static final String EXTRA_IMAGE = String.valueOf(R.string.image);
 
   //  ImageView imageView;
     GridView gridView;
+
+    Context context;
 
     int[] carImagesArray;
     ArrayList<String> carsArray;
@@ -42,17 +45,24 @@ public class SelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Set label
-        getSupportActionBar().setTitle("Image Select");
+        getSupportActionBar().setTitle("Item Select");
+        //getSupportActionBar().setTitle(String.valueOf(R.string.actionBarTitle));
 
         gridView = findViewById(R.id.gridView);
         gridView.setNumColumns(3);
 
         carsArray = new ArrayList<String>();
-        carsArray.add("Atacama");
-        carsArray.add("Gobi");
-        carsArray.add("Mohave");
-        carsArray.add("Patagonian");
-        carsArray.add("Sahara");
+        carsArray.add("Camaro");
+        carsArray.add("Charger");
+        carsArray.add("Gallardo");
+        carsArray.add("Mustang");
+        carsArray.add("488 Spider");
+
+        //carsArray.add(String.valueOf(R.string.carOne));
+//        carsArray.add(String.valueOf(R.string.carTwo));
+//        carsArray.add(String.valueOf(R.string.carThree));
+//        carsArray.add(String.valueOf(R.string.carFour));
+//        carsArray.add(String.valueOf(R.string.carFive));
 
         carImagesArray = new int[]{R.drawable.camaro, R.drawable.charger, R.drawable.gallardo, R.drawable.mustang, R.drawable.spider488};
         ImageAdapter adapter = new ImageAdapter(this, carsArray, carImagesArray);

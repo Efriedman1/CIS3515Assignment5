@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Car Image View App</string>
+    <string name="instruction">Please select an item</string>
+    <string name="display">Display</string>
+    <string name="textView">textView</string>
+    <string name="description">description</string>
+    <string name="image">image</string>
+
+    <string name="actionBarTitle">Item Select</string>
+
+    <string name="carOne">Camaro</string>
+    <string name="carTwo">Charger</string>
+    <string name="carThree">Gallardo</string>
+    <string name="carFour">Mustang</string>
+    <string name="carFive">488 Spider</string>
 </resources>
