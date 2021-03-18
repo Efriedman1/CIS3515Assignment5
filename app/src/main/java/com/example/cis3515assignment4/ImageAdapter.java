@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,9 +17,9 @@ public class ImageAdapter extends BaseAdapter {
     Context context;
     ArrayList<String> items;
     int[] imageRes;
-    String instruction = "Select item from list"; // Instruction to show for as first item
+    String instruction = String.valueOf(R.string.instruction); // Instruction to show for as first item
 
-    public ImageAdapter (Context context, ArrayList items, int[] imageRes) {
+    public ImageAdapter (Context context, ArrayList<String> items, int[] imageRes) {
         this.context = context;
         this.items = items;
         this.imageRes = imageRes;

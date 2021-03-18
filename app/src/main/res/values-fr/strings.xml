@@ -7,9 +7,10 @@
     <string name="description">la description</string>
     <string name="image">Image</string>
     <string name="actionBarTitle">Sélection d\'article</string>
-    <string name="carOne">Camaro</string>
-    <string name="carTwo">Chargeur</string>
-    <string name="carThree">Gallardo</string>
-    <string name="carFour">Mustang</string>
-    <string name="carFive">488 Araignée</string>
+
+<!--    <string name="carOne">Camaro</string>-->
+<!--    <string name="carTwo">Chargeur</string>-->
+<!--    <string name="carThree">Gallardo</string>-->
+<!--    <string name="carFour">Mustang</string>-->
+<!--    <string name="carFive">488 Araignée</string>-->
 </resources>

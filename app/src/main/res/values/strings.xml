@@ -8,9 +8,18 @@
 
     <string name="actionBarTitle">Item Select</string>
 
-    <string name="carOne">Camaro</string>
-    <string name="carTwo">Charger</string>
-    <string name="carThree">Gallardo</string>
-    <string name="carFour">Mustang</string>
-    <string name="carFive">488 Spider</string>
+<!--    <string name="carOne">Camaro</string>-->
+<!--    <string name="carTwo">Charger</string>-->
+<!--    <string name="carThree">Gallardo</string>-->
+<!--    <string name="carFour">Mustang</string>-->
+<!--    <string name="carFive">488 Spider</string>-->
+
+    <string-array name="carsArray">
+        <item>Camaro</item>
+        <item>Charger</item>
+        <item>Gallardo</item>
+        <item>Mustang</item>
+        <item>488 Spider</item>
+    </string-array>
+
 </resources>
