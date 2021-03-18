@@ -57,8 +57,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         Resources res = getResources();
         String[] carsArray = res.getStringArray(R.array.carsArray);
-        //List<String> cars = Arrays.asList(res.getStringArray(R.array.carsArray));
-
+        List<String> cars = Arrays.asList(res.getStringArray(R.array.carsArray));
+        ArrayList<String> carsList = new ArrayList<String>(cars);
+        
 //        carsArray = new ArrayList<String>();
 //        carsArray.add("Camaro");
 //        carsArray.add("Charger");
@@ -66,7 +67,6 @@ public class SelectionActivity extends AppCompatActivity {
 //        carsArray.add("Mustang");
 //        carsArray.add("488 Spider");
 
-        ArrayList<String> carsList = new ArrayList<String>(Arrays.asList(carsArray));
 
 //        carsArray.add(String.valueOf(R.string.carOne));
 //        carsArray.add(String.valueOf(R.string.carTwo));
